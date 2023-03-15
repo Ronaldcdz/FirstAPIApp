@@ -10,7 +10,7 @@ namespace Database.Common
     {
         public int Id;
         public DateTime CreatedAt;
-        public DateTime IpdatedAt;
+        public DateTime UpdatedAt;
 
 
 

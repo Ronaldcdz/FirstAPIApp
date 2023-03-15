@@ -5,9 +5,9 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirstAPIApp", "FirstAPIApp\FirstAPIApp.csproj", "{E07B999B-4CBA-43C4-8DB4-E562C692DC87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{6EA9DD1F-02A8-4D89-A9CE-43F0472AFACD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Database", "Database\Database.csproj", "{6EA9DD1F-02A8-4D89-A9CE-43F0472AFACD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Application", "Application\Application.csproj", "{6BA2358F-E22B-4947-84B1-0EB93BAE8947}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Application\Application.csproj", "{6BA2358F-E22B-4947-84B1-0EB93BAE8947}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
