@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Application.Repository
 {
-    public class CategoryRepository
+    public class CategoryRepository : GenericRepository<Category>
     {
         private readonly ApplicationDbContext _dbContext;
 
-        public CategoryRepository (ApplicationDbContext dbContext)
+        public CategoryRepository (ApplicationDbContext dbContext) : base (dbContext)
         {
             _dbContext = dbContext;
         }
