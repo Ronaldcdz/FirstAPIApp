@@ -8,7 +8,7 @@ namespace Database.Common
 {
     public class AuditableBaseEntity
     {
-        public int Id;
+
         public DateTime CreatedAt;
         public DateTime UpdatedAt;
 
