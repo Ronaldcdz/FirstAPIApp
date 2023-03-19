@@ -8,7 +8,7 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace FirstAPIApp.Controllers.V1
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class AuthorController : ControllerBase
     {
@@ -40,7 +40,7 @@ namespace FirstAPIApp.Controllers.V1
 
             if (author == null)
             {
-                return StatusCode(StatusCodes.Status400BadRequest, author);
+                return StatusCode(StatusCodes.Status400BadRequest, "User not Found");
             }
 
             else
@@ -78,7 +78,7 @@ namespace FirstAPIApp.Controllers.V1
                 await authorRepository.UpdateAsync(authorToUpdate, request.Id);
             }
 
-            return StatusCode(StatusCodes.Status200OK, await authorRepository.GetAllAsync());
+            return StatusCode(StatusCodes.Status200OK, await authorRepository.GetByIdAsync(request.Id));
         }
 
         [HttpDelete]
@@ -99,6 +99,6 @@ namespace FirstAPIApp.Controllers.V1
                 return StatusCode(StatusCodes.Status200OK, await authorRepository.GetAllAsync());
             }
         }
-
+            
     }
 }
