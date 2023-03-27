@@ -4,6 +4,7 @@ using Database.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using System.Reflection.Metadata.Ecma335;
 
 namespace FirstAPIApp.Controllers.V1
@@ -73,9 +74,20 @@ namespace FirstAPIApp.Controllers.V1
 
             else
             {
-                authorToUpdate.Name = request.Name;
-                authorToUpdate.BornAt = request.BornAt;
-                await authorRepository.UpdateAsync(authorToUpdate, request.Id);
+
+                try
+                {
+                    authorToUpdate.Name = request.Name is null ? authorToUpdate.Name : request.Name;
+                    authorToUpdate.BornAt = request.BornAt is null ? authorToUpdate.BornAt : request.BornAt;
+                    
+                    await authorRepository.UpdateAsync(authorToUpdate, request.Id);
+                }
+
+                catch (Exception ex)
+                {
+                    return StatusCode(StatusCodes.Status400BadRequest, "Error: "+ex.Message);
+                }
+
             }
 
             return StatusCode(StatusCodes.Status200OK, await authorRepository.GetByIdAsync(request.Id));
