@@ -1,11 +1,13 @@
 ﻿using Application.Repository;
 using Database;
 using Database.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstAPIApp.Controllers.V1
 {
+    [EnableCors("CorsRules")]
     [Route("api/v1/[controller]")]
     [ApiController]
     public class CategoryController : ControllerBase
